@@ -59,9 +59,9 @@ def read_root():
 
 @app.on_event("startup")
 async def startup_event():
-    password1_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwords.txt", "r")
-    password2_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwords2.txt", "r")
-    password3_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwords3.txt", "r")
+    password1_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwordtool-api/passwords.txt", "r")
+    password2_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwordtool-api/passwords2.txt", "r")
+    password3_file = open("/home/christian/Documents/Christian/Projects/password-tool/passwordtool-api/passwords3.txt", "r")
 
     for _password in password1_file:
         strip_line = _password.strip()
