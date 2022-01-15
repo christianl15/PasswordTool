@@ -1,0 +1,23 @@
+body {
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(0, 207, 0);
+    text-decoration: none;
+}
+
+.ending_page {
+    padding-top: 15%;
+    font-size: larger;
+}
+
+.genpassword {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    margin-top: 15%;
+}
+
+.password_submit {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    margin-top: 5%;
+}

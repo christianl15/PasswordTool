@@ -1,6 +1,5 @@
 import random
 import os
-import old.art as art
 
 is_secure = True
 
@@ -10,14 +9,13 @@ def db_check(password):
 
     for _password in password_txt:
         strip_line = _password.strip()
-        line_list = strip_line.split()
-        passwords_parsed.append(line_list)
+        passwords_parsed.append(strip_line)
 
     for __password in passwords_parsed:
         if __password == password:
-            is_secure = False
-            print("insecureTESTING")
+            print("Insecure")
+            break
             
 
 if __name__ == "__main__":
-    pass
+    db_check(password="password1")

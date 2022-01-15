@@ -8,14 +8,42 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="http://127.0.0.1:8000/items/?" method="get">
-        <label for="nochar">Number of letters:</label>
-        <input type="text" id="nochar" name="nochar"><br><br>
-        <label for="nonum">Number of numbers:</label>
-        <input type="text" id="nonum" name="nonum"><br><br>
-        <label for="noscar">Number of special characters:</label>
-        <input type="text" id="noscar" name="noscar"><br><br>
-        <input type="submit" value="Submit">
-      </form> 
+    <div class="genpassword">
+        <center>
+            <h2>Generate Rock Solid Password!</h2>
+            <table>
+                <form action="http://127.0.0.1:8000/genpassword/?" method="get">
+                    <tr>
+                        <td><label for="nochar">Number of letters</label></td>
+                        <td><input type="text" id="nochar" name="nochar"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nonum">Number of numbers</label></td>
+                        <td><input type="text" id="nonum" name="nonum"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="noscar">Number of special characters</label></td>
+                        <td><input type="text" id="noscar" name="noscar"></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 style="text-align: center;"><input type="submit" value="Generate Password"></td>
+                    </tr>
+                </form> 
+            </table>
+        </center>
+    </div>
+    <div class="password_submit">
+        <center>  
+            <h2>Check your password against a large database!</h2>  
+            <form action="http://127.0.0.1:8000/check_password/?" method="get">
+                <label for="password">Your password</label>
+                <input type="text" id="password" name="password"><br><br>
+                <input type="submit" value="Check your password">
+            </form> 
+        </center>
+    </div>
+    <div class="dbOrigin">
+        <a href="">Where did this large password database come from?</a>
+    </div>
 </body>
 </html>
