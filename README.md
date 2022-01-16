@@ -37,3 +37,10 @@ and select "Open with Live Server". Then open a terminal window inside of VSCode
 # OTHER troubleshooting
 If the program cannot import the module "main" then make sure you are in the /var/www/html directory first.
 If you are running it on a server and the functionality of the project is not available then open port 8000.
+
+# OTHER where did the password database come from
+All the password files are from either leaked or hacked databases from companies that were not hashing their passwords. When passwords are stored hopefully the 
+company that is storing them are hashing them and not storing them in plain text. Hashing algorithms are algorithms that mix the password into a unreadable 
+string. Hackers who hacked companies and got passwords dumped them online. passwords.txt is from the RockYou 2009 hack and the NordVPN hack. passwords2.txt is 
+from random companies that were hacked. The cool thing about passwords2.txt is that the passwords were originally hashed but were cracked by unknown hackers. 
+passwords3.txt is from the hotmail.com hack. 
