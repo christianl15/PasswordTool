@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Paisley Password Tool</title>
 </head>
 <body>
-    <div class="genpassword">
+    <div class="head1">
+        <center>
+            <img src="banner.jpg" alt="Banner">
+        </center>
+    </div>
+    <div class="info">
+        <center>
+            <p style="text-align: center;">In the world where our passwords are protecting our social life, our financial information, and a lot more, we have to keep our passwords secure. <br> When generating a password, it is recommended to have 11 letters, 4 numbers and 1 special character. If you have a password that you like, then check <br>it against a list of over 6 million passwords. Keep in mind that just because the check says that your password was not found in the database, <br> it doesn't mean that your password is completely secure.</p>
+        </center>
+    </div>
+    <div class="hairline">
+        <hr size="1" style="color:#00cf00;">
+    </div>
+    <div class="password">
         <center>
             <h2>Generate Rock Solid Password!</h2>
             <table>
-                <form action="http://127.0.0.1:8000/genpassword/?" method="get">
+                <form action="http://pwdtool.ddns.net:8000/genpassword/?" method="get">
                     <tr>
                         <td><label for="nochar">Number of letters</label></td>
                         <td><input type="text" id="nochar" name="nochar"></td>
@@ -30,20 +45,21 @@
                     </tr>
                 </form> 
             </table>
-        </center>
-    </div>
-    <div class="password_submit">
-        <center>  
-            <h2>Check your password against a large database!</h2>  
-            <form action="http://127.0.0.1:8000/check_password/?" method="get">
-                <label for="password">Your password</label>
-                <input type="text" id="password" name="password"><br><br>
-                <input type="submit" value="Check your password">
-            </form> 
+            <center>  
+                <h2>Check your password against a large database!</h2>  
+                <form action="http://pwdtool.ddns.net:8000/check_password/?" method="get">
+                    <label for="password">Your password</label>
+                    <input type="text" id="password" name="password"><br><br>
+                    <input type="submit" value="Check your password">
+                </form> 
+            </center>
         </center>
     </div>
     <div class="dbOrigin">
-        <a href="">Where did this large password database come from?</a>
+        <center>
+            <a style="color: rgb(0, 207, 0); text-decoration: none;" href="https://github.com/csleecsl/password-tool/blob/main/README.md#other-where-did-the-password-database-come-from">Link: Where did this large password database come from?</a><br>
+            <a style="color: rgb(0, 207, 0); text-decoration: none;" href="https://github.com/csleecsl/password-tool/">Link: Source code and docs</a>
+        </center>
     </div>
 </body>
 </html>

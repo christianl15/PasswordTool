@@ -5,19 +5,34 @@ body {
     text-decoration: none;
 }
 
-.ending_page {
-    padding-top: 15%;
+.info {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: larger;
 }
 
-.genpassword {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: large;
-    margin-top: 15%;
+.head1 {
+    font-size: 24px;
 }
 
-.password_submit {
+.ending_page {
+    padding-top: 15%;
+    font-size: 32px;
+}
+
+.dbOrigin {
+    padding-top: 2%;
+    color: rgb(0, 207, 0);
+}
+
+.password {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
-    margin-top: 5%;
+    padding-top: 5%;
+}
+
+hr {
+    color: #00cf00;
+
+.hairline {
+    padding-top: 4%;
 }
