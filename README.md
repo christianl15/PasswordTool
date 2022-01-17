@@ -18,7 +18,7 @@ server. Nginx is the webserver for our front-end, Apache can also be used. And g
 
 # 1 installing the base files
 First we have to install the files to our webserver's HTML directory. With Nginx the HTML files are located at `/var/www/html/`. In a terminal, change directory 
-into it. Then run `git clone https://github.com/csleecsl/password-tool/edit/main/README.md`.
+into it. Then run `git clone https://github.com/csleecsl/password-tool`.
 
 # 2 putting the files where they should be
 Change directory into the password-tool directory and move the files and folders inside of passwordtool-api/ and passwordtool-client/ to the directory before it. 
