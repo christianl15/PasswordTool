@@ -2,7 +2,7 @@
 My Tech Fair 2022 project.
 
 # demonstration
-Try a finished project at pwdtool.ddns.net
+Try a finished project at http://pwdtool.ddns.net
 
 # installing dependancies
 This program only works on Linux based servers (although I will only be showing how to install on Debian based Linux distros) and if you want to go really deep 
