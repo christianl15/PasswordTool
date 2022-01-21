@@ -92,10 +92,10 @@ def genpassword( nochar: Optional[int] = None, nonum: Optional[int] = None, nosc
     for letter in range(1,nochar+1):
         rd_letters = random.choice(letters)
         password += rd_letters
-    for symbol in range(1,nonum+1):
+    for symbol in range(1,noscar+1):
             rd_symbols = random.choice(symbols)
             password += rd_symbols
-    for number in range(1,noscar+1):
+    for number in range(1,nonum+1):
         rd_numbers = random.choice(numbers)
         password += rd_numbers
 
