@@ -27,7 +27,7 @@
         <center>
             <h2>Generate Rock Solid Password!</h2>
             <table>
-                <form action="http://pwdtool.ddns.net:8000/genpassword/?" method="get">
+                <form action="http://localhost:8000/genpassword/?" method="get">
                     <tr>
                         <td><label for="nochar">Number of letters</label></td>
                         <td><input type="text" id="nochar" name="nochar"></td>
@@ -45,9 +45,17 @@
                     </tr>
                 </form> 
             </table>
+            <center>
+                <h2>Make your current password more secure!</h2>
+                    <form action="http://localhost:8000/make_secure/?">
+                        <label for="c_password">Your password</label>
+                        <input type="text" id="c_password" name="c_password"><br><br>
+                        <input type="submit" value="Make secure">
+                    </form>
+            </center>
             <center>  
                 <h2>Check your password against a large database!</h2>  
-                <form action="http://pwdtool.ddns.net:8000/check_password/?" method="get">
+                <form action="http://localhost:8000/check_password/?" method="get">
                     <label for="password">Your password</label>
                     <input type="text" id="password" name="password"><br><br>
                     <input type="submit" value="Check your password">

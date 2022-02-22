@@ -27,12 +27,9 @@ body {
 .password {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
-    padding-top: 5%;
+    padding-top: 2%;
 }
 
 hr {
     color: #00cf00;
-
-.hairline {
-    padding-top: 4%;
 }
