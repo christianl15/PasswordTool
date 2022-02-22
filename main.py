@@ -2,6 +2,7 @@ import random
 import os 
 
 from optparse import Option
+from tokenize import String
 from typing import Optional
 
 from fastapi import FastAPI
@@ -83,6 +84,43 @@ def check_password( password: Optional[str] = None):
         return good_result
     elif bad_password:
         return bad_result
+
+char_map = { 'a' : '@',  'i' : '1', 'e' : '3'}
+
+@app.get("/make_secure/", response_class=HTMLResponse)
+def check_password( c_password: Optional[str] = None):
+    blank = ""
+    secure_pass = list(c_password)
+    #for i in range(0, len(secure_pass)+1):
+    #   if 
+    for i in range(len(secure_pass)):
+        if char_map.get(secure_pass[i]):
+            secure_pass[i] = char_map.get(secure_pass[i])
+        elif str(secure_pass[i]).isalpha() == True:
+            if str(secure_pass[i]).isupper() == True:
+                secure_pass[i] = str(secure_pass[i]).lower()
+            else:
+                secure_pass[i] = str(secure_pass[i]).upper()
+
+    return_pass = blank.join(secure_pass)
+    return f"""
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="http://147.182.184.159/style.css">
+        </head>
+        <body>
+            <div class="ending_page">
+                <center>
+                    Your more secured password is: {return_pass}<br>
+                    <a href="http://pwdtool.ddns.net/index.html">Go back to the original page</a>
+                </center>
+            </div>
+        </body>
+    </html>
+    """
 
 @app.get("/genpassword/", response_class=HTMLResponse)
 def genpassword( nochar: Optional[int] = None, nonum: Optional[int] = None, noscar: Optional[int] = None):
