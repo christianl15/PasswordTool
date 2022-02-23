@@ -37,3 +37,6 @@ and select "Open with Live Server". Then open a terminal window inside of VSCode
 # OTHER troubleshooting
 If the program cannot import the module "main" then make sure you are in the /var/www/html directory first.
 If you are running it on a server and the functionality of the project is not available then open port 8000.
+
+# OTHER where did the password database come from
+The password database that is used in this project is from leaked or hacked password lists dumped online. Companies that were hacked include Yahoo, Rockyou, Hotmail.com, and many other smaller companies. The password list is over 6 million passwords long. 
