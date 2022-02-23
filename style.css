@@ -33,3 +33,7 @@ body {
 hr {
     color: #00cf00;
 }
+
+.text_red {
+    color: red;
+}

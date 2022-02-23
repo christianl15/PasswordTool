@@ -87,12 +87,18 @@ def check_password( password: Optional[str] = None):
     elif bad_password:
         return bad_result
 
-char_map = { 'a' : '@',  'i' : '1', 'e' : '3', 's' : '$'}
+char_dict = { 'a' : '@', 'A' : '@', 'i' : '!', 'I' : '1', 'e' : '3', 'E' : '3',  's' : '$', 'S' : '$', 'o' : '0', 'O' : '0'}
 
 @app.get("/make_secure/", response_class=HTMLResponse)
 def check_password( c_password: Optional[str] = None):
     blank = ""
     secure_pass = list(c_password)
+    length = len(secure_pass)
+    short_pass = False
+
+    if length < 16:
+        short_pass = True
+
     for i in range(1,5):
     
         char = random.choice(secure_pass)
@@ -100,8 +106,8 @@ def check_password( c_password: Optional[str] = None):
         secure_pass[char_index] = str(char).upper()
 
     for i in range(len(secure_pass)):
-        if char_map.get(secure_pass[i]):
-            secure_pass[i] = char_map.get(secure_pass[i])
+        if char_dict.get(secure_pass[i]):
+            secure_pass[i] = char_dict.get(secure_pass[i])
         #elif str(secure_pass[i]).isalpha() == True:
         #    if str(secure_pass[i]).isupper() == True:
         #        secure_pass[i] = str(secure_pass[i]).lower()
@@ -109,13 +115,14 @@ def check_password( c_password: Optional[str] = None):
         #        secure_pass[i] = str(secure_pass[i]).upper()
 
     return_pass = blank.join(secure_pass)
-    return f"""
+
+    regular_result =  f"""
     <html>
         <head>
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="http://147.182.184.159/style.css">
+            <link rel="stylesheet" href="http://localhost:5500/style.css">
         </head>
         <body>
             <div class="ending_page">
@@ -127,6 +134,32 @@ def check_password( c_password: Optional[str] = None):
         </body>
     </html>
     """
+
+    short_result = f"""
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="http://localhost:5500/style.css">
+        </head>
+        <body>
+            <div class="ending_page">
+                <center>
+                    Your more secured password is: {return_pass}<br>
+                        <div class=text_red><br>WARNING: your password is less than 16 characters long. <br>We recommend you to change it to 16 characters or longer. <br></div>
+                        <a href="http://pwdtool.ddns.net/index.html">Go back to the original page</a>
+                    </div>
+                </center>
+            </div>
+        </body>
+    </html>
+    """
+
+    if short_pass == True:
+        return short_result
+    else:
+        return regular_result
 
 @app.get("/genpassword/", response_class=HTMLResponse)
 def genpassword( nochar: Optional[int] = None, nonum: Optional[int] = None, noscar: Optional[int] = None):
