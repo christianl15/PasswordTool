@@ -28,7 +28,7 @@ good_result = f"""
         <body>
             <div class="ending_page">
                 <center>
-                    Your password was not found in the database <br>
+                    Your password was not found in the database, but may still be vulnerable <br>
                     <a href="http://pwdtool.ddns.net/index.html">Go back to original site.</a>
                 </center>
             </div>
