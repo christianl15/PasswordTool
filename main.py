@@ -1,8 +1,10 @@
+from json.encoder import ESCAPE
 import random
 import os 
 
 from optparse import Option
 from tokenize import String
+
 from typing import Optional
 
 from fastapi import FastAPI
@@ -85,22 +87,26 @@ def check_password( password: Optional[str] = None):
     elif bad_password:
         return bad_result
 
-char_map = { 'a' : '@',  'i' : '1', 'e' : '3'}
+char_map = { 'a' : '@',  'i' : '1', 'e' : '3', 's' : '$'}
 
 @app.get("/make_secure/", response_class=HTMLResponse)
 def check_password( c_password: Optional[str] = None):
     blank = ""
     secure_pass = list(c_password)
-    #for i in range(0, len(secure_pass)+1):
-    #   if 
+    for i in range(1,5):
+    
+        char = random.choice(secure_pass)
+        char_index = secure_pass.index(char)
+        secure_pass[char_index] = str(char).upper()
+
     for i in range(len(secure_pass)):
         if char_map.get(secure_pass[i]):
             secure_pass[i] = char_map.get(secure_pass[i])
-        elif str(secure_pass[i]).isalpha() == True:
-            if str(secure_pass[i]).isupper() == True:
-                secure_pass[i] = str(secure_pass[i]).lower()
-            else:
-                secure_pass[i] = str(secure_pass[i]).upper()
+        #elif str(secure_pass[i]).isalpha() == True:
+        #    if str(secure_pass[i]).isupper() == True:
+        #        secure_pass[i] = str(secure_pass[i]).lower()
+        #    else:
+        #        secure_pass[i] = str(secure_pass[i]).upper()
 
     return_pass = blank.join(secure_pass)
     return f"""
